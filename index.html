@@ -162,21 +162,121 @@ footer .cta-meta{margin:0 0 24px}
 .flinks a:hover{color:var(--cyan);border-color:var(--cyan)}
 @media (max-width:640px){.fr{grid-template-columns:1fr}.msg{padding:28px 20px;border-radius:22px}.edu{flex-direction:column}.cert,.cert img{width:200px}.btn-grad,.btn-ghost{width:100%}}
 @media (prefers-reduced-motion:reduce){.btn-grad,.btn-grad svg,.cert img{transition:none}.btn-grad:hover,.cert:hover img{transform:none}}
+
+/* ===== Reference-inspired dark portfolio redesign ===== */
+:root{--bg:#080a0b;--panel:#101415;--line:rgba(255,255,255,.09);--text:#f7f7fa;--muted:#92929f;--btn:#18ddc7;--accent:#28d9cc;--cyan:#1de2cd;--violet:#b54cf1;color-scheme:dark}
+html{scroll-padding-top:96px;background:#080a0b}
+body{background:#080a0b;color:var(--text);font-size:16px;line-height:1.65;position:relative}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 88% 12%,rgba(0,210,174,.12),transparent 34%),radial-gradient(ellipse at 12% 58%,rgba(154,48,203,.10),transparent 36%),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,auto,64px 64px,64px 64px}
+.wrap{max-width:1240px;padding-left:32px;padding-right:32px}
+nav{position:sticky;top:0;background:rgba(8,10,11,.76);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.035)}
+nav .wrap.nav-inner{height:84px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px}
+.logo{font-size:30px;letter-spacing:-1.8px;font-weight:800;justify-self:start;color:#42c8e8}.logo span{color:#a4a4ad}
+.links{display:flex;gap:4px;padding:7px;border:1px solid rgba(255,255,255,.09);border-radius:999px;background:rgba(7,8,9,.72);overflow:visible}
+.links a{padding:11px 26px;border-radius:999px;color:#92929f;font-size:15px;font-weight:600;transition:color .2s,background .2s}
+.links a:hover{color:#fff}.links a.nav-home{background:#19dec7;color:#071010}
+.nav-talk{justify-self:end;text-decoration:none;color:#1de2cd;border:1px solid rgba(29,226,205,.42);border-radius:999px;padding:10px 22px;font-size:14px;font-weight:700;transition:background .2s}
+.nav-talk:hover{background:rgba(29,226,205,.1)}
+.hero{min-height:650px;padding:8px 0 64px;grid-template-columns:minmax(0,1fr) minmax(260px,.65fr);gap:48px;align-items:center}
+.hero:before{right:-15%;top:-80px;width:650px;height:650px;background:radial-gradient(closest-side,rgba(0,220,180,.10),rgba(0,220,180,.035) 60%,transparent);filter:blur(8px)}
+.hero-copy{max-width:760px}.pill{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(29,226,205,.35);background:rgba(8,25,25,.55);color:#1de2cd;border-radius:999px;padding:10px 20px;font-size:15px;font-weight:600;margin-bottom:46px}
+.status-dot{width:13px;height:13px;border-radius:50%;background:#1de2cd;box-shadow:0 0 18px rgba(29,226,205,.35);display:inline-block}
+.hero h1{font-size:clamp(52px,7.2vw,82px);font-weight:800;line-height:.99;letter-spacing:-.055em;margin-bottom:38px;max-width:800px}
+.gradient-text{background:linear-gradient(100deg,#22d9c8 0%,#5b9fe8 47%,#b64af1 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:clamp(17px,2vw,24px);line-height:1.5;color:#92929f;max-width:720px;margin:0 0 48px}.hero p strong{color:#f5f5f7;font-weight:700}
+.hero .btns{gap:18px}.btn{padding:17px 32px;border-radius:999px;border-color:rgba(29,226,205,.4);font-size:16px;font-weight:700}.btn.pri{display:inline-flex;align-items:center;justify-content:center;gap:22px;color:#06100f;background:linear-gradient(100deg,#1de2cd 0%,#5aaee6 52%,#b64af1 100%);border:0;box-shadow:0 12px 28px rgba(23,218,196,.13);min-width:290px}.btn.pri:hover{filter:brightness(1.08);background:linear-gradient(100deg,#1de2cd,#b64af1)}.hero-secondary{min-width:214px;text-align:center;background:rgba(10,18,19,.45)}
+.photo{max-width:330px;justify-self:center;border-radius:34px;background:linear-gradient(145deg,#1de2cd,#b64af1);box-shadow:0 24px 100px rgba(0,220,180,.10);opacity:.96}.photo img{border-radius:29px;min-height:380px}
+.stats{gap:18px;padding-top:0;padding-bottom:76px}.stat{background:transparent;border:0;border-top:1px solid rgba(255,255,255,.10);border-radius:0;padding:18px 0;text-align:left}.stat b{font-size:clamp(32px,4vw,44px);line-height:1.1;background:linear-gradient(100deg,#1de2cd,#a95bf0);-webkit-background-clip:text;background-clip:text;color:transparent}.stat span{font-size:14px;color:#8d8d99}
+section{padding:92px 0;position:relative}section h2{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.035em;margin-bottom:42px}section h2:after{width:54px;height:4px;margin-top:17px;background:linear-gradient(90deg,#1de2cd,#b64af1)}
+.about p{font-size:18px;line-height:1.8}.skills{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.sk,.job,.card,.insights li{background:linear-gradient(145deg,rgba(19,24,25,.94),rgba(12,14,15,.92));border-color:rgba(255,255,255,.09);box-shadow:0 14px 42px rgba(0,0,0,.12)}.sk{border-radius:20px;padding:26px}.sk h3{color:#29dcca;font-size:20px}.chips span{background:rgba(29,226,205,.055);border-color:rgba(29,226,205,.18);color:#c8d4d3}.job{border-left-color:#1de2cd;border-radius:18px}.job .co{color:#7adfd5}.tabs button{border-color:rgba(255,255,255,.13);border-radius:999px;padding:10px 23px}.tabs button[aria-pressed="true"]{background:#1de2cd;border-color:#1de2cd;color:#06100f}.cards{grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}.card{border-radius:22px}.card:hover{border-color:rgba(29,226,205,.55);box-shadow:0 24px 60px rgba(0,0,0,.28)}.thumb{background:#0b1011;border-color:rgba(255,255,255,.08)}.cb{padding:24px}.tag{color:#04100f;background:#1de2cd}.cb h3{letter-spacing:-.02em}.btn:not(.pri):hover{background:rgba(29,226,205,.08);border-color:#1de2cd}footer{background:rgba(13,17,18,.9);border-top-color:rgba(255,255,255,.09)}
+.cta-block{border:1px solid rgba(29,226,205,.16);border-radius:28px;padding:clamp(28px,5vw,60px);background:radial-gradient(ellipse at 90% 0%,rgba(29,226,205,.09),transparent 45%),linear-gradient(145deg,rgba(18,23,24,.94),rgba(9,11,12,.96));margin-bottom:28px}.cta-h{font-size:clamp(34px,5vw,56px);letter-spacing:-.04em}.cta-h:after{display:none}.gr{background:linear-gradient(100deg,#1de2cd,#b64af1);-webkit-background-clip:text;background-clip:text;color:transparent}.cta-sub{max-width:700px;color:#9999a4;font-size:18px}.btn-grad{background:linear-gradient(100deg,#1de2cd,#b64af1);color:#06100f;border-radius:999px;font-weight:700}.btn-ghost{border:1px solid rgba(29,226,205,.35);border-radius:999px;color:#f5f5f7}.msg{background:rgba(15,19,20,.94);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:clamp(22px,4vw,38px)}.msg h3{font-size:26px;margin-bottom:22px}.fld input,.fld textarea{background:#0a0d0e;border-color:rgba(255,255,255,.12);border-radius:12px;color:#f7f7fa}.fld input:focus,.fld textarea:focus{outline:1px solid #1de2cd;border-color:#1de2cd}
+@media(max-width:850px){nav .wrap.nav-inner{grid-template-columns:auto 1fr;height:auto;min-height:76px;padding-top:12px;padding-bottom:12px}.links{grid-column:1/-1;grid-row:2;justify-content:center;gap:0}.links a{padding:10px 18px}.nav-talk{grid-column:2;grid-row:1}.hero{grid-template-columns:1fr;min-height:unset;padding-top:52px;gap:38px}.hero-copy{max-width:760px}.hero .photo{display:none}.hero h1{font-size:clamp(50px,10vw,78px)}.pill{margin-bottom:32px}.hero p{margin-bottom:34px}.stats{padding-bottom:48px}}
+@media(max-width:520px){.wrap{padding-left:20px;padding-right:20px}nav .wrap.nav-inner{gap:10px}.logo{font-size:26px}.links{width:100%;justify-content:space-between;padding:5px}.links a{font-size:13px;padding:9px 13px}.nav-talk{padding:8px 15px;font-size:13px}.hero{padding-top:42px}.hero h1{font-size:clamp(44px,12vw,62px);margin-bottom:28px}.hero p{font-size:17px}.pill{font-size:13px;padding:8px 14px;margin-bottom:28px}.btn.pri{min-width:0;width:100%}.hero-secondary{min-width:0;flex:1}.hero .btns{gap:12px}.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.stat b{font-size:31px}.stat span{font-size:12px}section{padding:66px 0}.skills{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.cta-block{border-radius:20px}.cta-btns{display:flex;flex-wrap:wrap;gap:12px}.btn-grad,.btn-ghost{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Refined project cards and contact route */
+[hidden]{display:none!important}
+.cards{grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.cb{padding:19px;gap:10px}
+.cb h3{font-size:20px}
+.cb p{font-size:15px;line-height:1.55}
+.cb .chips{gap:6px}
+.cb .chips span{font-size:12px;padding:2px 9px}
+.cb .btns{display:flex;flex-wrap:nowrap;gap:8px;align-items:stretch;margin-top:4px}
+.cb .btns .btn{flex:1 1 0;min-width:0;padding:10px 12px;font-size:13px;white-space:nowrap;text-align:center}
+.cb .btns .btn.pri{min-width:0;gap:6px}
+footer{background:linear-gradient(125deg,rgba(20,222,199,.13) 0%,rgba(15,18,20,.96) 42%,rgba(181,76,241,.19) 100%);position:relative;isolation:isolate}
+footer:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(29,226,205,.07),transparent 45%,rgba(182,74,241,.09));pointer-events:none}
+#detail.contact-page{min-height:70vh;padding-top:30px;padding-bottom:70px}
+#detail.contact-page .back{margin-top:12px}
+@media(max-width:520px){
+ .cards{gap:16px}
+ .cb{padding:16px}
+ .cb .btns{gap:7px}
+ .cb .btns .btn{font-size:12px;padding:10px 7px}
+}
+
+
+/* Site-wide dark gradient and compact reference-inspired footer */
+body{background:radial-gradient(ellipse at 12% 72%,rgba(143,54,190,.08),transparent 38%),radial-gradient(ellipse at 88% 18%,rgba(0,210,174,.08),transparent 36%),#080a0b}
+body:before{background:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:64px 64px}
+footer{background:linear-gradient(115deg,rgba(5,7,8,.99),rgba(9,11,12,.99) 60%,rgba(12,8,15,.99))!important;border-top:1px solid rgba(255,255,255,.075);text-align:left;padding:64px 0 28px;position:relative;isolation:isolate} footer:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(29,226,205,.025),transparent 45%,rgba(182,74,241,.035));pointer-events:none}
+.footer-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:50px 80px}
+.footer-brand .logo{display:inline-block;margin-bottom:18px;font-size:36px;background:linear-gradient(100deg,#1de2cd,#b64af1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer-brand p{color:#92929f;margin:0 0 24px;line-height:1.7}
+.socials{display:flex;gap:12px}.socials a{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#1b1d22;border:1px solid rgba(255,255,255,.04);text-decoration:none;font-weight:700}
+.socials a:hover{color:#1de2cd;border-color:#1de2cd}
+.footer-contact h3{font-size:16px;color:#92929f;letter-spacing:.06em;margin:5px 0 22px}
+.footer-contact a,.footer-contact span{display:block;text-decoration:none;color:#b7b7bf;font-weight:600;margin-bottom:14px}
+.footer-contact a:hover{color:#1de2cd}
+.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.09);padding-top:24px;display:flex;justify-content:space-between;gap:20px;color:#92929f}
+#contact-form{display:none}
+#detail.contact-page{max-width:none;width:100%;padding:28px max(32px,calc((100% - 1100px)/2)) 70px;min-height:70vh}
+.contact-page .contact-heading{margin:12px 0 38px}
+.contact-page .contact-heading .eyebrow{margin-bottom:12px}
+.contact-page .contact-heading h1{font-size:clamp(38px,5vw,58px);letter-spacing:-.04em;margin-bottom:14px}
+.contact-page .contact-heading p{color:#92929f;margin:0}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(270px,.8fr);gap:40px;align-items:start}
+.contact-page #contact-form{display:block;max-width:none}
+.contact-side{display:grid;gap:14px}
+.contact-info{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px;background:rgba(18,22,23,.65)}
+.contact-info b{display:block;font-size:11px;letter-spacing:.12em;color:#92929f;margin-bottom:4px}
+.contact-info a,.contact-info span{color:#f5f5f7;text-decoration:none;font-weight:600}
+.contact-info a:hover{color:#1de2cd}
+.opportunity{border:1px solid rgba(29,226,205,.28);border-radius:14px;padding:20px;background:linear-gradient(135deg,rgba(29,226,205,.06),rgba(181,76,241,.08));margin-top:8px}
+.opportunity h3{font-size:18px;margin-bottom:8px}.opportunity p{color:#92929f;font-size:14px;margin:0 0 12px}.opportunity ul{padding-left:18px;margin:0;font-size:14px}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column}.contact-layout{grid-template-columns:1fr}#detail.contact-page{padding-left:20px;padding-right:20px}}
+
+/* Refined typography: keep Education compact and emphasize Experience */
+#about .about p{font-size:19px;line-height:1.85}
+/* Education restored to its original, more compact typography */
+#education .job h3{font-size:21px}
+#education .job .when{font-size:14px}
+#education .job .co{font-size:16px}
+#education .job ul{font-size:16px;line-height:1.65}
+#education .job{padding:20px 24px}
+/* Experience typography reduced slightly for a cleaner, more compact layout */
+#experience .job h3{font-size:22px}
+#experience .job .when{font-size:14px}
+#experience .job .co{font-size:16px}
+#experience .job ul{font-size:16px;line-height:1.7}
+#experience .job{padding:22px 26px}
+@media(max-width:520px){#about .about p{font-size:18px}#education .job{padding:20px}#experience .job{padding:20px}#experience .job ul{font-size:15px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a class="logo" href="#top">Merihan<b>Zakaria</b></a>
-<div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a class="btn pri" href="#contact">Contact Me</a></div></div></nav>
+<nav><div class="wrap nav-inner"><a class="logo" href="#top" aria-label="Merihan Zakaria home">MZ<span>.</span></a>
+<div class="links" aria-label="Main navigation"><a class="nav-home" href="#top">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#/contact">Contact</a></div><a class="nav-talk" href="#/contact">Let's Talk</a></div></nav>
 
 <main id="top">
 <div id="home">
 <div class="wrap hero">
-<div>
-<span class="pill">Data Analyst | BI Developer</span>
-<h1>Merihan Zakaria</h1>
-<p>I build the SQL models and dashboards behind KPI reporting, using Power BI, Tableau, Excel and Python. Right now that means client-facing BI work for STC and Planon.</p>
-<div class="chips"><span>Power BI</span><span>Excel</span><span>SQL</span><span>Tableau</span><span>Python</span><span>Azure</span></div>
-<div class="btns"><a class="btn pri" href="#projects">View Projects</a><a class="btn" href="#contact">Contact Me</a></div>
+<div class="hero-copy">
+<span class="pill"><span class="status-dot"></span>Available for opportunities</span>
+<h1>I transform<br><span class="gradient-text">complex data</span><br>into clarity</h1>
+<p>Hi, I'm <strong>Merihan Zakaria</strong> — a Data Analyst &amp; BI Developer with 3+ years crafting dashboards, pipelines, and insights that drive real business impact.</p>
+<div class="btns"><a class="btn pri" href="#projects">Explore My Work <span aria-hidden="true">→</span></a><a class="btn hero-secondary" href="#contact">Get in Touch</a></div>
 </div>
 <div class="photo"><img data-img="me" alt="Portrait of Merihan Zakaria"></div>
 </div>
@@ -232,33 +332,29 @@ footer .cta-meta{margin:0 0 24px}
 </div></div></section>
 <section id="contact"><div class="wrap">
 <div class="cta-block">
-<p class="eyebrow">// Contact</p>
-<h2 class="cta-h">Have a reporting problem? <span class="gr">Send it my way.</span></h2>
-<p class="cta-sub">Tell me about the report you need, the metric you don't trust, or the dashboard you want built. I'll reply by email.</p>
-<div class="cta-btns"><a class="btn-grad" id="start" href="#contact-form">Start a Conversation <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn-ghost" href="mailto:mirihanzakaria@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 7 9-7"/></svg> Email Directly</a></div>
+<p class="eyebrow">// Get in touch</p>
+<h2 class="cta-h">Let's start a <span class="gr">conversation.</span></h2>
+<p class="cta-sub">Have a project in mind or want to discuss opportunities? I'd love to hear from you.</p>
+<div class="cta-btns"><a class="btn-grad" id="start" href="#/contact">Start a Conversation <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div>
 <form class="msg" id="contact-form" novalidate aria-labelledby="msg-title">
 <h3 id="msg-title">Send a Message</h3>
-<div class="fr">
-<div class="fld"><label for="cf-name">Full Name <i aria-hidden="true">*</i></label><input id="cf-name" type="text" autocomplete="name" placeholder="Your name" aria-required="true" aria-describedby="cf-name-err"><span class="err" id="cf-name-err" role="alert"></span></div>
-<div class="fld"><label for="cf-email">Email <i aria-hidden="true">*</i></label><input id="cf-email" type="email" autocomplete="email" placeholder="you@company.com" aria-required="true" aria-describedby="cf-email-err"><span class="err" id="cf-email-err" role="alert"></span></div>
-</div>
-<div class="fld"><label for="cf-phone">Phone Number</label><input id="cf-phone" type="tel" autocomplete="tel" placeholder="+1 234 567 8900"></div>
-<div class="fld"><label for="cf-msg">Message <i aria-hidden="true">*</i></label><textarea id="cf-msg" placeholder="Tell me about the report or dashboard you need..." aria-required="true" aria-describedby="cf-msg-err"></textarea><span class="err" id="cf-msg-err" role="alert"></span></div>
-<button class="btn-grad send" type="submit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></svg> Send Message</button>
-<p class="note">Your details are only used to reply to your message.</p>
-<p class="status" id="cf-status" aria-live="polite"></p>
+<div class="fr"><div class="fld"><label for="cf-name">Full Name <i aria-hidden="true">*</i></label><input id="cf-name" type="text" autocomplete="name" placeholder="Your name" aria-required="true" aria-describedby="cf-name-err"><span class="err" id="cf-name-err" role="alert"></span></div>
+<div class="fld"><label for="cf-email">Email <i aria-hidden="true">*</i></label><input id="cf-email" type="email" autocomplete="email" placeholder="you@company.com" aria-required="true" aria-describedby="cf-email-err"><span class="err" id="cf-email-err" role="alert"></span></div></div>
+<div class="fld"><label for="cf-phone">Phone Number</label><input id="cf-phone" type="tel" autocomplete="tel" placeholder="+01026428544"></div>
+<div class="fld"><label for="cf-msg">Message <i aria-hidden="true">*</i></label><textarea id="cf-msg" placeholder="Tell me about your project..." aria-required="true" aria-describedby="cf-msg-err"></textarea><span class="err" id="cf-msg-err" role="alert"></span></div>
+<button class="btn-grad send" type="submit">➤ Send Message</button><p class="note">Your information will only be used to respond to your inquiry.</p><p class="status" id="cf-status" aria-live="polite"></p>
 </form>
 </div></section>
 </div>
 <div id="detail" class="wrap detail" hidden></div>
 </main>
 
-<footer><div class="wrap">
-<p class="sig">Let's build your next dashboard.</p>
-<ul class="cta-meta fmeta"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 7 9-7"/></svg><a href="mailto:mirihanzakaria@gmail.com">mirihanzakaria@gmail.com</a></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3h3l1.4 4-2 1.3a11 11 0 0 0 6.7 6.7l1.3-2 4 1.4v3A2.5 2.5 0 0 1 18.5 20 15.5 15.5 0 0 1 4 5.5 2.5 2.5 0 0 1 6.6 3z"/></svg><a href="tel:+201026428544">+20 102 642 8544</a></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Cairo, Egypt</span></li></ul>
-<div class="flinks"><a href="https://www.linkedin.com/in/merihan-zakaria-279296226/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/Mirehan" target="_blank" rel="noopener noreferrer">GitHub</a></div>
-<small>&copy; Merihan Zakaria. All rights reserved.</small></div></footer>
+<footer><div class="wrap footer-grid">
+<div class="footer-brand"><a class="logo" href="#top">Merihan<span>.</span></a><p>Data Analyst &amp; BI Developer crafting data-driven<br> solutions that transform business decisions.</p><div class="socials"><a aria-label="GitHub" href="https://github.com/Mirehan" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.68-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.03.76 2.08v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/merihan-zakaria-279296226/" target="_blank" rel="noopener noreferrer">in</a><a aria-label="Email" href="mailto:mirihanzakaria@gmail.com">✉</a></div></div>
+<div class="footer-contact"><h3>GET IN TOUCH</h3><a href="mailto:mirihanzakaria@gmail.com">mirihanzakaria@gmail.com</a><a href="tel:+01026428544">+01026428544</a><span>Cairo, Egypt</span></div>
+<div class="footer-bottom"><span>© 2026 Merihan Zakaria. All rights reserved.</span><span>Designed with precision</span></div>
+</div></footer>
 
 <dialog id="cert-dialog" aria-label="ITI certificate"><img id="cert-big" alt="Certificate of completion from the Information Technology Institute (ITI): Data Analyst Track, ITI Tech-Leaps (Online), October 2022 to February 2023"><div><button class="btn" id="cert-close" type="button">Close</button></div></dialog>
 
@@ -295,8 +391,19 @@ var TL=["Power BI","Power Query","DAX","Data Modeling","Interactive Visuals","Ex
 var home=document.getElementById('home'),det=document.getElementById('detail');
 function fillImgs(){document.querySelectorAll('img[data-img]').forEach(function(i){i.src=IMG[i.dataset.img]})}
 function route(){
+  var isContact=location.hash==='#/contact';
   var m=location.hash.match(/^#\/project\/(\w+)/),p=m&&P[m[1]];
-  if(p){
+  if(isContact){
+    var form=document.getElementById('contact-form');
+    home.hidden=true;
+    det.hidden=false;
+    det.classList.add('contact-page');
+    det.innerHTML='<div class="contact-heading"><p class="eyebrow">// Get in touch</p><h1>Let\'s work<br><span class="gr">together</span></h1><p>Have a project in mind or want to discuss opportunities? I\'d love to hear from you.</p></div><div class="contact-layout"><div id="contact-form-slot"></div><aside class="contact-side"><div class="contact-info"><b>EMAIL</b><a href="mailto:mirihanzakaria@gmail.com">mirihanzakaria@gmail.com</a></div><div class="contact-info"><b>PHONE</b><a href="tel:+01026428544">+01026428544</a></div><div class="contact-info"><b>LOCATION</b><span>Cairo, Egypt</span></div><div><b style="font-size:12px;color:#92929f;letter-spacing:.1em">CONNECT</b><p><a href="https://www.linkedin.com/in/merihan-zakaria-279296226/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> &nbsp; <a href="https://github.com/Mirehan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div><div class="opportunity"><h3>Open to Opportunities</h3><p>I\'m currently available for full-time positions, contracts, and consulting work.</p><ul><li>Full-time (On-site/Remote)</li><li>Part-time opportunities</li><li>Contract projects</li><li>Consulting &amp; advisory</li></ul></div></aside></div>';
+    det.querySelector('#contact-form-slot').appendChild(form);
+    document.querySelector('footer').hidden=false;
+    window.scrollTo(0,0);
+  }else if(p){
+    document.getElementById('contact').appendChild(document.getElementById('contact-form'));
     var s='';
     if(p.imgs.length){p.imgs.forEach(function(k,n){s+='<div class="shot has"><img src="'+IMG[k]+'" alt="'+p.t+' report page '+(n+1)+'"></div>'})}
     else{for(var i=1;i<=p.ph;i++)s+='<div class="shot">Report page '+i+'<br>Add this page image here</div>'}
@@ -306,7 +413,11 @@ function route(){
     det.innerHTML='<a class="back" href="#projects">Back to projects</a><br><span class="tag">Power BI</span><h1>'+p.t+'</h1><p class="lead">'+p.d+'</p><h2>Tools used</h2><div class="chips big">'+p.tl.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div><h2>Report pages</h2><div class="shots">'+s+'</div><h2>What the data showed</h2><ul class="insights">'+ins+'</ul><p style="margin-top:28px"><a class="btn" href="'+p.gh+'" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>';
     home.hidden=true;det.hidden=false;window.scrollTo(0,0);
   }else{
+    document.getElementById('contact').appendChild(document.getElementById('contact-form'));
     var was=home.hidden;home.hidden=false;det.hidden=true;
+    document.querySelectorAll('#home > section, #home > .hero, #home > .stats').forEach(function(el){el.hidden=false});
+    document.querySelector('footer').hidden=false;
+    det.classList.remove('contact-page');
     var el=location.hash.length>1&&document.querySelector(location.hash.replace(/[^#\w-]/g,''));
     if(was&&el)el.scrollIntoView();
   }
@@ -324,8 +435,7 @@ var FORM_ENDPOINT='';
   var form=document.getElementById('contact-form'),status=document.getElementById('cf-status');
   document.getElementById('start').addEventListener('click',function(e){
     e.preventDefault();
-    form.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
-    setTimeout(function(){document.getElementById('cf-name').focus({preventScroll:true})},reduce?0:550);
+    location.hash='#/contact';
   });
   var rules=[
     ['cf-name',function(v){return v.length>1},'Please enter your name.'],
