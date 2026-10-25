@@ -398,6 +398,49 @@ img,video,iframe,svg{max-width:100%}
 .contact-socials .contact-wa-icon{color:#fff}.contact-socials .contact-wa-icon svg{color:#fff;fill:currentColor}
 @media(max-width:520px){.contact-socials{gap:9px;margin-top:18px}.contact-socials a{width:44px;height:44px;border-radius:13px}}
 </style>
+
+<style id="inline-svg-sizing-bug-fix">
+/* Prevent inline SVG icons from using their browser default 300×150 size. */
+.mobile-menu-socials a,
+.contact-socials a,
+.social-icons a,
+.social-links a,
+.hero-socials a,
+#contact a[aria-label="GitHub"],
+#contact a[aria-label="LinkedIn"],
+#contact a[aria-label="Email"],
+#contact a[aria-label="WhatsApp"]{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.mobile-menu-socials a svg,
+.contact-socials a svg,
+.social-icons a svg,
+.social-links a svg,
+.hero-socials a svg,
+#contact a[aria-label="GitHub"] svg,
+#contact a[aria-label="LinkedIn"] svg,
+#contact a[aria-label="Email"] svg,
+#contact a[aria-label="WhatsApp"] svg{
+  width:22px;
+  height:22px;
+  min-width:22px;
+  min-height:22px;
+  max-width:22px;
+  max-height:22px;
+  display:block;
+  flex:0 0 22px;
+}
+.mobile-menu-socials a{width:48px;height:48px;flex:0 0 48px}
+.mobile-menu-socials{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-socials{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+@media(max-width:520px){
+  .mobile-menu-socials{gap:9px}
+  .mobile-menu-socials a{width:44px;height:44px;flex-basis:44px}
+}
+</style>
+
 </head>
 <body>
 <nav><div class="wrap nav-inner"><a class="logo" href="#top" aria-label="Merihan Zakaria home">MZ<span>.</span></a>
