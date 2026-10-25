@@ -47,7 +47,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 section{padding:54px 0}
 section h2{font-size:clamp(28px,3.8vw,38px);font-weight:700;margin-bottom:24px;text-align:center}
 section h2:after{content:"";display:block;width:54px;height:3px;margin:10px auto 0;background:linear-gradient(90deg,var(--btn),var(--cyan));border-radius:4px}
-.about p{max-width:70ch;color:var(--muted);font-size:16px;margin:0 auto 10px;text-align:center}
+.about p{max-width:70ch;color:var(--muted);font-size:18px;line-height:1.75;margin:0 auto 12px;text-align:center}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
 .sk{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px}
 .sk h3{font-size:16px;margin-bottom:9px;color:var(--accent)}
@@ -301,7 +301,7 @@ footer{background:linear-gradient(115deg,rgba(5,7,8,.99),rgba(9,11,12,.99) 60%,r
 #experience .job .co{font-size:14px}
 #experience .job ul{font-size:14px;line-height:1.55}
 #experience .job{padding:16px 20px}
-@media(max-width:520px){#about .about p{font-size:14px}#education .job{padding:14px}#experience .job{padding:14px}#experience .job ul{font-size:13px}}
+@media(max-width:520px){#about .about p{font-size:16px;line-height:1.7}#education .job{padding:14px}#experience .job{padding:14px}#experience .job ul{font-size:13px}}
 
 
 /* Compact responsive navigation */
@@ -348,10 +348,11 @@ img,video,iframe,svg{max-width:100%}
 /* 90% right-side slide-in mobile drawer; desktop navigation stays unchanged */
 .mobile-menu-header{display:none}
 @media (max-width:900px){
-  body.mobile-menu-open{overflow:hidden;touch-action:none}
-  nav .wrap.nav-inner{position:relative;z-index:1002}
+  body.mobile-menu-open{overflow:hidden}
+  nav{z-index:2000;backdrop-filter:none;-webkit-backdrop-filter:none}
+  nav .wrap.nav-inner{position:relative;z-index:2002}
   #main-navigation.links{
-    display:flex;position:fixed;top:0;left:auto;right:0;z-index:1001;width:90vw;max-width:90vw;height:100vh;height:100dvh;
+    display:flex;position:fixed;top:0;left:auto;right:0;z-index:2001;width:90vw;max-width:90vw;height:100vh;height:100dvh;
     max-height:100vh;max-height:100dvh;box-sizing:border-box;margin:0;padding:22px 26px 32px;
     border:0;border-left:1px solid var(--line);border-radius:22px 0 0 22px;background:rgba(5,8,18,.985);backdrop-filter:blur(18px);
     flex-direction:column;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;gap:0;
@@ -371,7 +372,7 @@ img,video,iframe,svg{max-width:100%}
   .mobile-menu-socials svg{width:21px;height:21px;fill:currentColor}
   #main-navigation.links .mobile-menu-items a{display:block;font-size:clamp(18px,4.5vw,23px);line-height:1.35;padding:8px 2px;min-height:0;white-space:normal;border-radius:8px;flex:0 0 auto;text-decoration:none}
   #main-navigation.links .mobile-menu-items a.is-active{background:transparent;color:var(--cyan)}
-  .nav-toggle{position:relative;z-index:1003}
+  .nav-toggle{position:relative;z-index:2003;pointer-events:auto;touch-action:manipulation}
   /* Keep only the drawer close button visible; prevent a duplicate X. */
   .nav-toggle.is-open{display:none}
   .nav-toggle.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
@@ -381,6 +382,8 @@ img,video,iframe,svg{max-width:100%}
   nav .logo{position:relative;z-index:1003}
 }
 @media(max-width:520px){#main-navigation.links{width:90vw;max-width:90vw;padding:20px 22px 28px}}
+@media(max-width:900px){#about h2{font-size:clamp(32px,5vw,42px);margin-bottom:22px}}
+@media(min-width:901px){#about h2{font-size:clamp(32px,4vw,42px)}}
 @media(prefers-reduced-motion:reduce){#main-navigation.links{transition:none}}
 </style>
 </head>
@@ -634,11 +637,14 @@ function setActiveNav(id){
  var menu=document.getElementById('main-navigation');
  if(!toggle||!menu)return;
  function setMenu(open){
-   menu.classList.toggle('is-open',open);
-   toggle.classList.toggle('is-open',open);
-   document.body.classList.toggle('mobile-menu-open',open && window.innerWidth<=900);
-   toggle.setAttribute('aria-expanded',open?'true':'false');
-   toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+   var mobile=window.matchMedia('(max-width: 900px)').matches;
+   var shouldOpen=!!open && mobile;
+   menu.classList.toggle('is-open',shouldOpen);
+   toggle.classList.toggle('is-open',shouldOpen);
+   document.body.classList.toggle('mobile-menu-open',shouldOpen);
+   document.body.style.overflow=shouldOpen?'hidden':'';
+   toggle.setAttribute('aria-expanded',shouldOpen?'true':'false');
+   toggle.setAttribute('aria-label',shouldOpen?'Close navigation menu':'Open navigation menu');
  }
  var closeButton=menu.querySelector('.mobile-menu-close');
  toggle.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();setMenu(!menu.classList.contains('is-open'));});
@@ -647,6 +653,7 @@ function setActiveNav(id){
  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
  document.addEventListener('click',function(e){if(menu.classList.contains('is-open')&&!menu.contains(e.target)&&!toggle.contains(e.target))setMenu(false);});
  window.addEventListener('resize',function(){if(window.innerWidth>900)setMenu(false);});
+ window.addEventListener('orientationchange',function(){if(window.innerWidth>900)setMenu(false);});
 })();
 window.addEventListener('hashchange',route);fillImgs();route();
 if(location.hash==='#/contact')setActiveNav('contact');
