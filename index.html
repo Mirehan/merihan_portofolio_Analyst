@@ -349,6 +349,13 @@ img,video,iframe,svg{max-width:100%}
 }
 
 
+/* Keep mobile drawer-only elements out of the centered desktop navigation */
+@media (min-width:901px){
+  .mobile-menu-header,.mobile-menu-socials{display:none!important}
+  .mobile-menu-items{display:contents}
+  nav .wrap.nav-inner{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+  #main-navigation.links{justify-self:center;flex-wrap:nowrap;white-space:nowrap}
+}
 /* 90% right-side slide-in mobile drawer; desktop navigation stays unchanged */
 .mobile-menu-header{display:none}
 @media (max-width:900px){
@@ -439,6 +446,11 @@ img,video,iframe,svg{max-width:100%}
   .mobile-menu-socials{gap:9px}
   .mobile-menu-socials a{width:44px;height:44px;flex-basis:44px}
 }
+/* Refined hero portrait dimensions: consistent height without image overflow */
+.photo{width:100%;max-width:340px;aspect-ratio:4/5;height:auto;min-height:0;overflow:hidden;box-sizing:border-box}
+.photo img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center 25%;border-radius:inherit}
+@media(max-width:760px){.hero .photo{width:min(72vw,260px);max-width:260px;aspect-ratio:1/1;height:auto;min-height:0}}
+@media(max-width:520px){.hero .photo{width:min(68vw,220px);max-width:220px}}
 </style>
 
 </head>
